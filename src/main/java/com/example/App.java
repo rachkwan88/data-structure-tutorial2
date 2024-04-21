@@ -15,8 +15,8 @@ public class App {
             JSONObject obj = array.getJSONObject(i);
             int x = obj.getInt("value");
             System.out.println(x);
-
-
         }
+
+        test1.saveFile("integers.json",array);
     }
 }

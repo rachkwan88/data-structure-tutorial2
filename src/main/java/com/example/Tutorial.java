@@ -4,6 +4,8 @@ import java.util.Random;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Tutorial {
 
@@ -18,4 +20,17 @@ public class Tutorial {
         }
         return list1;
     }
+    //Create a function called saveFile(filename: string, json: JSONObject)
+
+    public void saveFile(String filename, JSONArray values) {
+        String fileContent = values.toString();
+        try {
+            FileWriter fw = new FileWriter(filename, false);
+            fw.write(fileContent);
+            fw.close();
+        } catch (IOException e) {
+            System.out.println(e.toString());
+        }
+    }
+
 }
